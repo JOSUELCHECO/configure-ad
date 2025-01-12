@@ -31,8 +31,9 @@ This tutorial outlines the implementation of on-premises Active Directory within
 		- Take note of the virtual network (vNet) that is automatically created
        
 <p align="center">
-<img src="https://i.imgur.com/mrpBWtM.png" height="70%" width="70%" alt="Azure Free Account"/>
-
+<img src="https://i.imgur.com/xejR2AT.png)" height="70%" width="70%" alt="Azure Free Account"/>
+</p>
+<p></p>
 
 
 	- Set DC-1's Virtual Network Interface Card (vNIC) private IP address to be static
@@ -44,8 +45,9 @@ This tutorial outlines the implementation of on-premises Active Directory within
 			- This ensures DC-1's IP address will not change
 	   
 <p align="center">
-<img src="https://i.imgur.com/xcyLUOG.png" height="70%" width="70%" alt="Azure Free Account"/> <img src="https://i.imgur.com/ZaWdzTl.png" height="70%" width="70%" alt="Azure Free Services"/>  <img src="https://i.imgur.com/Vn0UhWm.png" height="70%" width="70%" alt="Azure Free Services"/>
+<img src="https://i.imgur.com/vYhvqLD.png" height="70%" width="70%" alt="Azure Free Account"/> <img src="https://i.imgur.com/hOhFw4h.png" height="70%" width="70%" alt="Azure Free Services"/>  <img src="https://i.imgur.com/zkoTX9C.png" height="70%" width="70%" alt="Azure Free Services"/>
 </p>
+<p></p> <p></p>
 
 
 	- The second virtual machine will be the Client
@@ -54,7 +56,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 		- Use the same resource group and vNet as DC-1
 
 <p align="center">
-<img src="https://i.imgur.com/Vf7yeY1.png" height="70%" width="70%" alt="Azure Free Account"/> <img src="https://i.imgur.com/3DK41Cr.png" height="70%" width="70%" alt="Azure Free Services"/> 
+<img src="https://i.imgur.com/dsEnQBn.png" height="70%" width="70%" alt="Azure Free Account"/> <img src="https://i.imgur.com/tFiCp8H.png" height="70%" width="70%" alt="Azure Free Services"/> 
 
 
 <h3>Step 2: Ensure Connectivity Between the Client and Domain Controller</h3>
@@ -67,7 +69,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 		- To fix this, we need to enable ICMPv4 on DC-1's local Windows firewall
 
 <p align="center">
-<img src="https://i.imgur.com/U6UOqj5.png" height="70%" width="70%" alt="Azure Free Account"/> 
+<img src="https://i.imgur.com/SGKm1xB.png" height="70%" width="70%" alt="Azure Free Account"/> 
 	
 - Login to DC-1 using Microsoft Remote Desktop
 	- Start > Windows Administrative Tools > Windows Defender Firewall with Advanced Security > Inbound Rules
@@ -75,13 +77,13 @@ This tutorial outlines the implementation of on-premises Active Directory within
 	- Find "Core Networking Diagnostics" and "ICMPv4" and enable these two inbound rules
 
 <p align="center">
-<img src="https://i.imgur.com/bw6eoLh.png" height="50%" width="50%" alt="Azure Free Account"/> <img src="https://i.imgur.com/BY1Ohgb.png" height="80%" width="80%" alt="Azure Free Services"/>
+<img src="https://i.imgur.com/RPMdJ03.png" height="50%" width="50%" alt="Azure Free Account"/> <img src="https://i.imgur.com/pxHRlAx.png" height="80%" width="80%" alt="Azure Free Services"/>
 </p>
 
 - Log back into Client-1 and the command line will automatically begin pinging DC-1 successfully
     
 <p align="center">
-<img src="https://i.imgur.com/890WIJB.png" height="70%" width="70%" alt="Azure Free Account"/> 
+<img src="https://i.imgur.com/TTrlgrH.png" height="70%" width="70%" alt="Azure Free Account"/> 
 
 
 <h3>Step 3: Install Active Directory</h3>
@@ -95,14 +97,14 @@ This tutorial outlines the implementation of on-premises Active Directory within
 	- Complete the installation
 
 <p align="center">
-<img src="https://i.imgur.com/DQRVNnm.png" height="80%" width="80%" alt="Azure Free Account"/> <img src="https://i.imgur.com/RpzngRi.png" height="50%" width="50%" alt="Azure Free Services"/>
+<img src="https://i.imgur.com/3pRK1ya.png" height="80%" width="80%" alt="Azure Free Account"/> <img src="https://i.imgur.com/8feZZvO.png" height="50%" width="50%" alt="Azure Free Services"/>
 </p>
 
 - At the top right of the Server Manager Dashboard, click on the flag
 - Select "Promote This Server to a Domain Controller"
 
 <p align="center">
-<img src="https://i.imgur.com/GOYiTFe.png" height="70%" width="70%" alt="Azure Free Account"/> 
+<img src="https://i.imgur.com/o1slUbP.png" height="70%" width="70%" alt="Azure Free Account"/> 
 	
  - Select "Add a New Forest"
  	- Root domain name: mydomain.com
@@ -113,13 +115,13 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 
 <p align="center">
-<img src="https://i.imgur.com/IjfUZ0a.png" height="70%" width="70%" alt="Azure Free Account"/> 
+<img src="https://i.imgur.com/2jVUdTp.png" height="70%" width="70%" alt="Azure Free Account"/> 
 	
 - DC-1 will automatically restart
 - Log back into DC-1 as user: mydomain.com\labuser               
 
 <p align="center">
-<img src="https://i.imgur.com/oNp39DK.png" height="70%" width="70%" alt="Azure Free Account"/> 
+<img src="https://i.imgur.com/K21OBCZ.png" height="70%" width="70%" alt="Azure Free Account"/> 
 	
 
 
@@ -130,7 +132,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Select Active Directory Users and Computers
 
 <p align="center">
-<img src="https://i.imgur.com/udGHbGs.png" height="70%" width="70%" alt="Azure Free Account"/> 
+<img src="https://i.imgur.com/4QLhQXw.png" height="70%" width="70%" alt="Azure Free Account"/> 
 	
 - Right-click mydomain.com > New > Select Oranizational Unit (OU)
 - Create two OUs
@@ -138,7 +140,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 	- Name the second "_ADMINS"
 	
 <p align="center">
-<img src="https://i.imgur.com/5wSZuA4.png" height="70%" width="70%" alt="Azure Free Account"/> 
+<img src="https://i.imgur.com/3zqNzG5.png" height="70%" width="70%" alt="Azure Free Account"/> 
 	
 	
 - Right-click mydomain.com and click Referesh to sort the new organizational units to the top
@@ -151,7 +153,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 	- Uncheck all boxes
 	- Select Next and then select Finish
 <p align="center">
-<img src="https://i.imgur.com/nv6jc9p.png" height="70%" width="70%" alt="Azure Free Account"/> <img src="https://i.imgur.com/uLopQTZ.png" height="70%" width="70%" alt="Azure Free Account"/> 
+<img src="https://i.imgur.com/BGlTquH.png" height="70%" width="70%" alt="Azure Free Account"/> <img src="https://i.imgur.com/REWylnk.png" height="70%" width="70%" alt="Azure Free Account"/> 
 	
 - Go to the _ADMINS OU
 - Right-click Jane Doe > select Properties
@@ -163,7 +165,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 
 <p align="center">
-<img src="https://i.imgur.com/EapMhBs.png" height="70%" width="70%" alt="Azure Free Account"/> <img src="https://i.imgur.com/vGb8Kx8.png" height="70%" width="70%" alt="Azure Free Services"/>
+<img src="https://i.imgur.com/oZekONX.png" height="70%" width="70%" alt="Azure Free Account"/> <img src="https://i.imgur.com/vGb8Kx8.png" height="70%" width="70%" alt="Azure Free Services"/>
 </p>
  
      
@@ -180,7 +182,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - After it is done updating, select Restart and select Yes
 
 <p align="center">
-<img src="https://i.imgur.com/z6UesO7.png" height="70%" width="70%" alt="Azure Free Account"/> <img src="https://i.imgur.com/bt0yK17.png" height="70%" width="70%" alt="Azure Free Services"/>  <img src="https://i.imgur.com/sB5edH5.png" height="70%" width="70%" alt="Azure Free Services"/>
+<img src="https://i.imgur.com/6xNBs9u.png" height="70%" width="70%" alt="Azure Free Account"/> <img src="https://i.imgur.com/7HM7vXT.png" height="70%" width="70%" alt="Azure Free Services"/>  <img src="https://i.imgur.com/kuvL4II.png" height="70%" width="70%" alt="Azure Free Services"/>
 </p>
 
 - Log back into Client-1 using Microsoft Remote Desktop as the original local admin (labuser)
@@ -194,7 +196,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 
 <p align="center">
-<img src="https://i.imgur.com/3HxJLpe.png" height="80%" width="80%" alt="Azure Free Account"/> <img src="https://i.imgur.com/J8M4zBU.png" height="50%" width="50%" alt="Azure Free Services"/>
+<img src="https://i.imgur.com/5ssccMG.png" height="80%" width="80%" alt="Azure Free Account"/> <img src="https://i.imgur.com/cmQQHm4.png" height="50%" width="50%" alt="Azure Free Services"/>
 </p>
 
 <h3>Step 6: Setup Remote Desktop for non-administrative users on Client-1
@@ -210,7 +212,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
  
  <p align="center">
-<img src="https://i.imgur.com/HgAXVMX.png" height="70%" width="70%" alt="Azure Free Account"/> <img src="https://i.imgur.com/0QDUk5l.png" height="60%" width="60%" alt="Azure Free Services"/>
+<img src="https://i.imgur.com/9IVDuzI.png" height="70%" width="70%" alt="Azure Free Account"/> <img src="https://i.imgur.com/HvgW4oh.png" height="60%" width="60%" alt="Azure Free Services"/>
 </p>
 
 <h3>Step 7: Create as many additional users as you would like and attempt to log into Client-1 with one of the users' profiles
@@ -223,7 +225,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 	- You can find the script [here](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1)
 
 <p align="center">
-<img src="https://i.imgur.com/MpvLIbB.png" height="70%" width="70%" alt="Azure Free Account"/> <img src="https://i.imgur.com/V4vIvre.png" height="70%" width="70%" alt="Azure Free Services"/>
+<img src="https://i.imgur.com/MSzldrO.png" height="70%" width="70%" alt="Azure Free Account"/> <img src="https://i.imgur.com/ygcveCn.png" height="70%" width="70%" alt="Azure Free Services"/>
 </p>
 
 - Click the green arrow button near the top-middle of the screen
@@ -231,16 +233,10 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Once the users have been created, go back to Active Directory Users and Computers > mydomain.com > _EMPLOYEES
 		- You will see all the accounts that were created
 - You can now log into Client-1 with one of the accounts that were created
-	- Try logging into Client-1 as user "base.milu" using the password "Password1"
+	- Try logging into Client-1 as user "bag.wamu" using the password "Password1"
 
 <p align="center">
-<img src="https://i.imgur.com/3HN1Nf4.png" height="80%" width="80%" alt="Azure Free Account"/> <img src="https://i.imgur.com/CeE8LGh.png" height="50%" width="50%" alt="Azure Free Services"/>  <img src="https://i.imgur.com/7ZVBp8a.png" height="70%" width="70%" alt="Azure Free Services"/>
+<img src="https://i.imgur.com/2RTZ96J.png" height="80%" width="80%" alt="Azure Free Account"/> <img src="https://i.imgur.com/kKGXAZV.png" height="50%" width="50%" alt="Azure Free Services"/>  <img src="https://i.imgur.com/lz2qROK.png" height="70%" width="70%" alt="Azure Free Services"/>
 </p>
-
-<p align="center">
-<img src="https://i.imgur.com/EzgHWRs.png" height="70%" width="70%" alt="Azure Free Account"/> <img src="https://i.imgur.com/hYFodxu.png" height="70%" width="70%" alt="Azure Free Services"/>
-</p>
-
-
 
 🎉Congratulations! You have implementated on-premises Active Directory and created users within an Azure virtual machine!🎉
